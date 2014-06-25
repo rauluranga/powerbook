@@ -1,0 +1,6 @@
+# Install native fonts
+# Usage: `brew bundle /path/to/Fontfile`
+
+tap caskroom/fonts          
+
+cask install font-source-code-pro

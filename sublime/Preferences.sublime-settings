@@ -1,0 +1,19 @@
+{
+	"auto_complete_selector": "source - comment, meta.tag - punctuation.definition.tag.begin",
+	"auto_complete_triggers":
+	[
+		{
+			"characters": "ng-controller=\"*",
+			"selector": "punctuation.definition.string"
+		}
+	],
+	"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
+	"dictionary": "Packages/Language - Spanish/Spanish.dic",
+	"font_face": "Source Code Pro",
+	"font_size": 14.0,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"theme": "Spacegray Eighties.sublime-theme"
+}

@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# Only functions that are used when setting up a fresh install
+
+# Seek git author information
+setup_git_author() {
+    e_process "Setting up Git author"
+
+    # Variables
+    local GIT_AUTHOR_NAME=""
+    local GIT_AUTHOR_EMAIL=""
+
+    # Git author name
+    e_question "What's your name"
+    read USER_GIT_AUTHOR_NAME
+    if [[ ! -z "$USER_GIT_AUTHOR_NAME" ]]; then
+        GIT_AUTHOR_NAME="${USER_GIT_AUTHOR_NAME}"
+    fi
+
+    # Git author email
+    e_question "What's your email"
+    read USER_GIT_AUTHOR_EMAIL
+    if [[ ! -z "$USER_GIT_AUTHOR_EMAIL" ]]; then
+        GIT_AUTHOR_EMAIL="${USER_GIT_AUTHOR_EMAIL}"
+    fi
+
+    # set the credentials (modifies ${HOME}/.gitconfig)
+    $(git config --global user.name "$GIT_AUTHOR_NAME")
+    $(git config --global user.email "$GIT_AUTHOR_EMAIL")
+
+    e_success "Git author is $(git config user.name) <$(git config user.email)>"
+}

@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+
+logging() {
+
+    # write your test however you want; this just tests if SILENT is non-empty
+    if [ -n "$SILENT" ]; then
+        "$@" &> /dev/null
+    else
+        "$@"
+    fi
+}
+# Header logging
+e_header() {
+    logging printf "\n$(tput setaf 7)%s:$(tput sgr0) \n" "$@"
+}
+
+# Success logging
+e_success() {
+    echo "$(date) SUCCESS:  $@" >> $DOTFILES_LOG
+    logging printf "$(tput setaf 2)✓ Success:$(tput sgr0) %s\n" "$@"
+}
+
+# Error logging
+e_error() {
+    echo "$(date) ERROR:  $@" >> $DOTFILES_LOG
+    logging printf "$(tput setaf 1)⊘ Error:$(tput sgr0) %s. Aborting!\n" "$@"
+    exit 1
+}
+
+# Warning logging
+e_warning() {
+    echo "$(date) WARNING:  $@" >> $DOTFILES_LOG
+    logging printf "$(tput setaf 3)⚠ Warning:$(tput sgr0) %s!\n" "$@"
+}
+
+# Question logging
+e_question() {
+    echo "$(date) QUESTION:  $@" >> $DOTFILES_LOG
+    logging printf "\n$(tput setaf 3)==> %s?$(tput sgr0) " "$@"
+}
+
+# Command/Processing logging
+e_process() {
+    echo "$(date) PROCESSING:  $@" >> $DOTFILES_LOG
+    logging printf "$(tput setaf 6)┃$(tput sgr0)$(tput setaf 7) %s...$(tput sgr0)\n" "$@"
+}
+
+# Ask for confirmation before proceeding
+seek_confirmation() {
+    printf "\n"
+    e_question "$@"
+    read -p "Continue? (y/n) " -n 1
+    printf "\n"
+}
+
+# Test whether the result of an 'ask' is a confirmation
+is_confirmed() {
+    if [[ "$REPLY" =~ ^[Yy]$ ]]; then
+      return 0
+    fi
+    return 1
+}
+
+# Test whether we're in a git repo
+is_git_repo() {
+    $(git rev-parse --is-inside-work-tree &> /dev/null)
+}
+
+# Test whether a command exists
+# $1 - cmd to test
+type_exists() {
+    if [ $(type -P $1) ]; then
+      return 0
+    fi
+    return 1
+}
+
+# Test whether a Homebrew formula is already installed
+# $1 - formula name (may include options)
+formula_exists() {
+    if $(brew list $1 >/dev/null); then
+        e_success "$1 is already installed"
+        return 0
+    fi
+
+    e_warning "Missing $1 formula"
+    return 1
+}
