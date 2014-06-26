@@ -2,17 +2,15 @@
 
 run_help() {
 
-text = $(cat <<EOF
-Usage: $(basename "$0") [options]
+cat <<EOT
+
 
 Options:
     -h, --help      Print this help text
-    --no-log)       Suppress verbose logging
+    --no-log       Suppress verbose logging
     --no-apps       Suppress application installs
 
 Documentation can be found at https://github.com/rauluranga/powerbook/
 
-EOF
-)
-print text;
+EOT
 }
