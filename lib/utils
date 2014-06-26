@@ -16,32 +16,32 @@ e_header() {
 
 # Success logging
 e_success() {
-    echo "$(date) SUCCESS:  $@" >> $DOTFILES_LOG
+    echo "$(date) SUCCESS:  $@" >> $POWERBOOK_LOG
     logging printf "$(tput setaf 2)✓ Success:$(tput sgr0) %s\n" "$@"
 }
 
 # Error logging
 e_error() {
-    echo "$(date) ERROR:  $@" >> $DOTFILES_LOG
+    echo "$(date) ERROR:  $@" >> $POWERBOOK_LOG
     logging printf "$(tput setaf 1)⊘ Error:$(tput sgr0) %s. Aborting!\n" "$@"
     exit 1
 }
 
 # Warning logging
 e_warning() {
-    echo "$(date) WARNING:  $@" >> $DOTFILES_LOG
+    echo "$(date) WARNING:  $@" >> $POWERBOOK_LOG
     logging printf "$(tput setaf 3)⚠ Warning:$(tput sgr0) %s!\n" "$@"
 }
 
 # Question logging
 e_question() {
-    echo "$(date) QUESTION:  $@" >> $DOTFILES_LOG
+    echo "$(date) QUESTION:  $@" >> $POWERBOOK_LOG
     logging printf "\n$(tput setaf 3)==> %s?$(tput sgr0) " "$@"
 }
 
 # Command/Processing logging
 e_process() {
-    echo "$(date) PROCESSING:  $@" >> $DOTFILES_LOG
+    echo "$(date) PROCESSING:  $@" >> $POWERBOOK_LOG
     logging printf "$(tput setaf 6)┃$(tput sgr0)$(tput setaf 7) %s...$(tput sgr0)\n" "$@"
 }
 

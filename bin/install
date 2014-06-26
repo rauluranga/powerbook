@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+export POWERBOOK="${HOME}/.powerbook"
+export POWERBOOK_LOG="${HOME}/Library/Logs/powerbook.log"
+export GITHUB_USER="rauluranga"
+
+# If missing, download and extract the powerbook repository
+if [[ ! -d "${POWERBOOK}" ]]; then
+
+    # no bash directory found
+    printf "$(tput bold ; tput setaf 3)⚠ Warning: $(tput sgr0)%s!\n" "No ${POWERBOOK} found"
+
+    # create directory
+    printf "$(tput setaf 6)┃ $(tput sgr0)$(tput setaf 7)%s...$(tput sgr0)\n" "Creating directory at ${POWERBOOK}"
+    mkdir -p "${POWERBOOK}"
+
+    # Download the repository as a tarball
+    printf "$(tput setaf 6)┃ $(tput sgr0)$(tput setaf 7)%s...$(tput sgr0)\n" "Downloading repository to /tmp directory"
+    # (-#) shows the progress bar as # sign
+    # (-f) fail silently
+    # (-L) follow the headers
+    # (-o) output to a file
+    curl -#fLo /tmp/powerbook.tar.gz "https://github.com/${GITHUB_USER}/powerbook/tarball/master"
+    # (-s) silent mode, show no errors or progress
+    # (-S) with -s, only show the errors
+    # curl -fsSLo /tmp/powerbook.tar.gz "https://github.com/${GITHUB_USER}/powerbook/tarball/master"
+
+    # Extract to the powerbook directory
+    printf "$(tput setaf 6)┃ $(tput sgr0)$(tput setaf 7)%s...$(tput sgr0)\n" "Extracting files to ${POWERBOOK}"
+    tar -zxf /tmp/powerbook.tar.gz --strip-components 1 -C "${POWERBOOK}"
+
+    # Remove the tarball
+    printf "$(tput setaf 6)┃ $(tput sgr0)$(tput setaf 7)%s...$(tput sgr0)\n" "Removing tarball from /tmp directory"
+    rm -rf /tmp/powerbook.tar.gz
+
+    printf "$(tput setaf 2)✓ Success: $(tput sgr0)%s.\n" "${POWERBOOK} created, repository downloaded and extracted"
+fi
+
+
+# Change to the powerbook directory
+cd "${POWERBOOK}"
+
+touch SAMPLE
