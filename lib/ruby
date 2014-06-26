@@ -2,50 +2,40 @@
 
 run_ruby() {
 
-    # Check for rbenv
-    if type_exists 'rbenv'; then
+    #ruby_version="$(curl -sSL http://ruby.thoughtbot.com/latest)"
+    ruby_version="2.1.2"
 
-        #ruby_version="$(curl -sSL http://ruby.thoughtbot.com/latest)"
-        ruby_version="2.1.2"
+    if [ ! -d "${HOME}/rbenv/versions/${ruby_version}" ]; then
 
-        if [ ! -d "${HOME}/rbenv/versions/${ruby_version}" ]; then
+      e_process "Installing Ruby $ruby_version ..."
+      rbenv install -s "$ruby_version"
 
-          e_process "Installing Ruby $ruby_version ..."
-          rbenv install -s "$ruby_version"
-
-          e_process "Setting $ruby_version as global default Ruby ..."
-            rbenv global "$ruby_version"
-            rbenv rehash
-        fi
-
-        e_process "Updating to latest Rubygems version ..."
-          gem update --system
-
-        e_process "Installing Bundler to install project-specific Ruby gems ..."
-          gem install bundler ---no-document --pre
-
-        e_process "Configuring Bundler for faster, parallel gem installation ..."
-          number_of_cores=$(sysctl -n hw.ncpu)
-          bundle config --global jobs $((number_of_cores - 1))
-
-        e_process "Installing Cocoapods"
-          gem install cocoapods --no-document
-
-        e_process "Installing Powder"
-          gem install powder --no-document
-
-        e_process "Installing Rake"
-          gem install rake --no-document
-
-        e_process "Installing Homesick"
-          gem install homesick --no-document
-
-        [[ $? ]] && e_success "Done"
-    else
-        printf "\n"
-        e_error "Error: rbenv not found."
-        printf "Aborting...\n"
-        exit
+      e_process "Setting $ruby_version as global default Ruby ..."
+        rbenv global "$ruby_version"
+        rbenv rehash
     fi
 
+    e_process "Updating to latest Rubygems version ..."
+      gem update --system
+
+    e_process "Installing Bundler to install project-specific Ruby gems ..."
+      gem install bundler ---no-document --pre
+
+    e_process "Configuring Bundler for faster, parallel gem installation ..."
+      number_of_cores=$(sysctl -n hw.ncpu)
+      bundle config --global jobs $((number_of_cores - 1))
+
+    e_process "Installing Cocoapods"
+      gem install cocoapods --no-document
+
+    e_process "Installing Powder"
+      gem install powder --no-document
+
+    e_process "Installing Rake"
+      gem install rake --no-document
+
+    e_process "Installing Homesick"
+      gem install homesick --no-document
+
+    [[ $? ]] && e_success "Done"
 }

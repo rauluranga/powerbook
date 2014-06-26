@@ -7,7 +7,9 @@ update
 # Upgrade any already-installed formulae
 upgrade
 
+tap thoughtbot/formulae
 install gitsh	
+
 install git-flow
 install hub
 install pow

@@ -61,43 +61,79 @@ if ! type_exists 'gcc'; then
     exit 1
 fi
 
+#     __  __                     __                     
+#    / / / /___  ____ ___  ___  / /_  ________ _      __
+#   / /_/ / __ \/ __ `__ \/ _ \/ __ \/ ___/ _ \ | /| / /
+#  / __  / /_/ / / / / / /  __/ /_/ / /  /  __/ |/ |/ / 
+# /_/ /_/\____/_/ /_/ /_/\___/_.___/_/   \___/|__/|__/  
+                                                      
+
 # Check for Homebrew
 if ! type_exists 'brew'; then
     e_header "Installing Homebrew..."
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+
+    # Install Homebrew formulae via Brewfile
+    e_process "Installing Homebrew packages"
+    brew bundle ./bin/Brewfile
 fi
+
+#          __                                          __  
+#   ____  / /_        ____ ___  __  __     ____  _____/ /_ 
+#  / __ \/ __ \______/ __ `__ \/ / / /____/_  / / ___/ __ \
+# / /_/ / / / /_____/ / / / / / /_/ /_____// /_(__  ) / / /
+# \____/_/ /_/     /_/ /_/ /_/\__, /      /___/____/_/ /_/ 
+#                            /____/                        
 
 if [ ! -d "${HOME}/.oh-my-zsh" ]; then
     e_header "Installing oh-my-zsh"
+
     #Install oh-my-zsh
     curl -L http://install.ohmyz.sh | sh
+
+    #setup rbenv
+    if ! grep -qs "rbenv init" ~/.zshrc; then
+        printf 'export PATH="$HOME/.rbenv/bin:$PATH"\n' >> ~/.zshrc
+        printf 'eval "$(rbenv init - --no-rehash)"\n' >> ~/.zshrc
+
+        e_header "Enable shims and autocompletion ..."
+        eval "$(rbenv init - --no-rehash)"
+    fi
+
+    export PATH="$HOME/.rbenv/bin:$PATH"
 fi
 
-# Install Homebrew formulae via Brewfile
-e_process "Installing Homebrew packages"
-brew bundle ./bin/Brewfile
+#     ____        __         
+#    / __ \__  __/ /_  __  __
+#   / /_/ / / / / __ \/ / / /
+#  / _, _/ /_/ / /_/ / /_/ / 
+# /_/ |_|\__,_/_.___/\__, /  
+#                   /____/   
 
-#
-#
-#
-if ! grep -qs "rbenv init" ~/.zshrc; then
-    printf 'export PATH="$HOME/.rbenv/bin:$PATH"\n' >> ~/.zshrc
-    printf 'eval "$(rbenv init - --no-rehash)"\n' >> ~/.zshrc
 
-    e_header "Enable shims and autocompletion ..."
-    eval "$(rbenv init - --no-rehash)"
-fi
-#
-#
-#
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-
-# Install Ruby
 e_process "Installing ruby & gem files"
-run_ruby
+
+# Check for rbenv
+if type_exists 'rbenv'; then
+
+    # Install Ruby
+    run_ruby
+
+else
+    printf "\n"
+    e_error "Error: rbenv not found."
+    printf "Aborting...\n"
+    exit
+fi
 
 e_success "All packages have been installed"
+
+#        __      __  _____ __         
+#   ____/ /___  / /_/ __(_) /__  _____
+#  / __  / __ \/ __/ /_/ / / _ \/ ___/
+# / /_/ / /_/ / /_/ __/ / /  __(__  ) 
+# \__,_/\____/\__/_/ /_/_/\___/____/  
+                                    
 
 # Ask before potentially overwriting files
 seek_confirmation "This step may overwrite your existing dotfiles"
