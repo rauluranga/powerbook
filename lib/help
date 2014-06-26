@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+run_help() {
+
+cat <<EOT
+Usage: $(basename "$0") [options]
+
+Options:
+    -h, --help      Print this help text
+    --no-log)       Suppress verbose logging
+    --no-apps       Suppress application installs
+
+Documentation can be found at https://github.com/rauluranga/powerbook/
+
+EOT
+
+}
