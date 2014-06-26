@@ -80,11 +80,6 @@ brew bundle ./bin/Brewfile
 #
 #
 #
-
-if [ ! -f "$HOME/.zshrc" ]; then
-    touch $HOME/.zshrc
-fi
-
 if ! grep -qs "rbenv init" ~/.zshrc; then
     printf 'export PATH="$HOME/.rbenv/bin:$PATH"\n' >> ~/.zshrc
     printf 'eval "$(rbenv init - --no-rehash)"\n' >> ~/.zshrc
@@ -92,6 +87,9 @@ if ! grep -qs "rbenv init" ~/.zshrc; then
     e_header "Enable shims and autocompletion ..."
     eval "$(rbenv init - --no-rehash)"
 fi
+#
+#
+#
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 
@@ -115,7 +113,7 @@ if is_confirmed; then
     setup_git_author
 
 else
-    e_error "This step is required.  When you're ready, run 'dotfiles' to start up again"
+    e_error "This step is required.  When you're ready, run this script to start up again"
 fi
 
 
