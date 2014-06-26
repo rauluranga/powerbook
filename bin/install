@@ -46,3 +46,76 @@ if [[ "$1" == "-h" || "$1" == "--help" ]]; then
     run_help
     exit
 fi
+
+# Source the necessary files and helper scripts
+source ./lib/git
+source ./lib/ruby
+source ./lib/utils
+source ./lib/sublime
+
+# Before relying on Homebrew, check that packages can be compiled
+if ! type_exists 'gcc'; then
+    e_error "The XCode Command Line Tools must be installed first."
+    printf "  run 'xcode-select --install' and follow the instrucctions\n"
+    printf "  Then run this setup script again.\n"
+    exit 1
+fi
+
+# Check for Homebrew
+if ! type_exists 'brew'; then
+    e_header "Installing Homebrew..."
+    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+fi
+
+if [ ! -d "${HOME}/.oh-my-zsh" ]; then
+    e_header "Installing oh-my-zsh"
+    #Install oh-my-zsh
+    curl -L http://install.ohmyz.sh | sh
+fi
+
+# Install Homebrew formulae via Brewfile
+e_process "Installing Homebrew packages"
+brew bundle ./bin/Brewfile
+
+#
+#
+#
+
+if [ ! -f "$HOME/.zshrc" ]; then
+    touch $HOME/.zshrc
+fi
+
+if ! grep -qs "rbenv init" ~/.zshrc; then
+    printf 'export PATH="$HOME/.rbenv/bin:$PATH"\n' >> ~/.zshrc
+    printf 'eval "$(rbenv init - --no-rehash)"\n' >> ~/.zshrc
+
+    e_header "Enable shims and autocompletion ..."
+    eval "$(rbenv init - --no-rehash)"
+fi
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+# Install Ruby
+e_process "Installing ruby & gem files"
+run_ruby
+
+e_success "All packages have been installed"
+
+# Ask before potentially overwriting files
+seek_confirmation "This step may overwrite your existing dotfiles"
+
+if is_confirmed; then
+    # Symlink all necessary files
+    homesick clone ${GITHUB_USER}/dotfiles
+    homesick symlink dotfiles
+
+    e_success "All files have been symlinked"
+
+    # Setup git authorship
+    setup_git_author
+
+else
+    e_error "This step is required.  When you're ready, run 'dotfiles' to start up again"
+fi
+
+
