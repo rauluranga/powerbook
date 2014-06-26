@@ -40,4 +40,9 @@ fi
 # Change to the powerbook directory
 cd "${POWERBOOK}"
 
-touch SAMPLE
+# Help text
+source ./lib/help
+if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    run_help
+    exit
+fi

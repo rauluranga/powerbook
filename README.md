@@ -1,9 +1,8 @@
 ##Powerbook
 Powerbook is a script to set up a Mac OS X laptop ready for Web Development.
 
-##Install
+###Install
 
-##Mac OS X
 run the script:
 
 ```bash
