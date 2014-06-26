@@ -2,7 +2,7 @@
 
 run_help() {
 
-cat <<EOT
+cat <<EOF
 Usage: $(basename "$0") [options]
 
 Options:
@@ -12,6 +12,6 @@ Options:
 
 Documentation can be found at https://github.com/rauluranga/powerbook/
 
-EOT
+EOF
 
 }
