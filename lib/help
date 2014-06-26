@@ -2,7 +2,7 @@
 
 run_help() {
 
-cat <<EOF
+text = $(cat <<EOF
 Usage: $(basename "$0") [options]
 
 Options:
@@ -13,5 +13,6 @@ Options:
 Documentation can be found at https://github.com/rauluranga/powerbook/
 
 EOF
-
+)
+print text;
 }
