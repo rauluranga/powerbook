@@ -1,5 +1,5 @@
 ##Powerbook
-Powerbook is a script to set up a Mac OS X laptop ready for Web Development.
+Powerbook is a script to set up a Mac OS X laptop ready for development.
 
 ###Install
 
@@ -20,6 +20,8 @@ $ bash -c "$(curl -fsSL raw.github.com/rauluranga/powerbook/master/bin/install)"
 
 ####Homebrew formulae:   
 
+- [gitsh](https://github.com/thoughtbot/gitsh)
+- [cask](https://github.com/caskroom/homebrew-cask)
 - [git-flow](https://github.com/nvie/gitflow)
 - [hub](https://github.com/github/hub)
 - [pow](http://pow.cx/)

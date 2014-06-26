@@ -10,6 +10,9 @@ upgrade
 tap thoughtbot/formulae
 install gitsh	
 
+tap caskroom/cask
+install brew-cask
+
 install git-flow
 install hub
 install pow
