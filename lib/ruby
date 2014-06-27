@@ -37,5 +37,11 @@ run_ruby() {
     e_process "Installing Homesick"
       gem install homesick --no-document
 
+    e_process "Installing chef"
+      gem install chef --no-document
+
+    e_process "librarian-chef"
+      gem install librarian-chef --no-document
+
     [[ $? ]] && e_success "Done"
 }
