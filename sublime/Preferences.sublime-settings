@@ -7,7 +7,6 @@
 			"selector": "punctuation.definition.string"
 		}
 	],
-	"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
 	"dictionary": "Packages/Language - Spanish/Spanish.dic",
 	"font_face": "Source Code Pro",
 	"font_size": 14.0,
@@ -15,5 +14,6 @@
 	[
 		"Vintage"
 	],
-	"theme": "Spacegray Eighties.sublime-theme"
+ 	 "theme": "Spacegray.sublime-theme",
+ 	 "color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme"
 }

@@ -183,7 +183,7 @@ fi
 
 figlet -k 'Enjoy!' | cowsay -f moose -n | toilet --gay -f term   
 
-e_success "Yor MAC is ready to rock!"
+e_success "Your MAC is ready to rock!"
 
 
 

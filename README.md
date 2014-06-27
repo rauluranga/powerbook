@@ -1,6 +1,18 @@
 ##Powerbook
 Powerbook is a script to set up a Mac OS X laptop ready for development.
 
+###Manual setup
+
+When all is complete, you'll need to setup iTerm2 color scheme manually, download SpaceGray theme from [iterm2colorschemes](http://iterm2colorschemes.com/) and then load it from the color tab in iTerm2, finally set the font to Source Code Pro for Powerline need it by the [agnoster](https://gist.github.com/agnoster/3712874) theme for zsh.
+
+You'll get something like this:
+
+![image](http://f.cl.ly/items/1N002Q2Z253I2t0m1d2N/iTerm2.png)
+
+it will match The Space Gray theme for ST2 (pre-isntalled for you)
+
+![image](http://f.cl.ly/items/2D2Q1Q0A3l2G0M3R0M0g/spacegray.png)
+
 ###Install
 
 run the script:
@@ -82,6 +94,10 @@ $ bash -c "$(curl -fsSL raw.github.com/rauluranga/powerbook/master/bin/install)"
 #### Fonts
 
 - [source-code-pro](http://blog.typekit.com/2012/09/24/source-code-pro/)
+- [dejavu-sans-mono-for-powerline](https://github.com/Lokaltog/powerline-fonts/tree/master/DejaVuSansMono)
+- [font-inconsolata-for-powerline](https://github.com/Lokaltog/powerline-fonts/tree/master/Inconsolata)
+- [font-inconsolata-dz-for-powerline](https://github.com/Lokaltog/powerline-fonts/tree/master/InconsolataDz)
+- [font-sauce-code-powerline](https://github.com/Lokaltog/powerline-fonts/tree/master/SourceCodePro)
 
 #### Sublime Text 2 packages
 
