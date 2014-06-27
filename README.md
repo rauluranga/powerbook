@@ -62,6 +62,7 @@ $ bash -c "$(curl -fsSL raw.github.com/rauluranga/powerbook/master/bin/install)"
 - [adium](https://www.adium.im/)
 - [alfred](http://www.alfredapp.com/)
 - [apptrap](http://onnati.net/apptrap/)
+- [caffeine](http://lightheadsw.com/caffeine/)
 - [charles](http://www.charlesproxy.com/)
 - [codekit](https://incident57.com/codekit/)
 - [dropbox](https://www.dropbox.com/)
