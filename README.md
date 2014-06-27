@@ -7,7 +7,8 @@ When all is complete, you'll need to setup iTerm2 color scheme manually, downloa
 
 You'll get something like this:
 
-![image](http://f.cl.ly/items/1N002Q2Z253I2t0m1d2N/iTerm2.png)
+![image](http://f.cl.ly/items/160A0W1u2D0K1A3E3y0G/iTerm2.png)
+
 
 it will match The Space Gray theme for ST2 (pre-isntalled for you)
 
