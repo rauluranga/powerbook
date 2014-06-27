@@ -181,3 +181,9 @@ if is_confirmed; then
     e_warning "Please consider using cask commands for Updating/Upgrading or Uninstalling a Mac OS X Application"
 fi
 
+figlet -k 'Enjoy!' | cowsay -f moose -n | toilet --gay -f term   
+
+e_success "Yor MAC is ready to rock!"
+
+
+

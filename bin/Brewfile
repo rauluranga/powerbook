@@ -21,6 +21,10 @@ install tig
 install tmux
 install tree
 install xctool
+install cowsay
+install fortune
+install figlet
+install toilet
 
 # rbenv 
 install rbenv
