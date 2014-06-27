@@ -2,6 +2,7 @@
 # Usage: `brew bundle /path/to/Caskfile`
 
 cask install adium
+cask install alfred
 cask install apptrap
 cask install charles
 cask install codekit
@@ -14,6 +15,7 @@ cask install gitx-rowanj
 cask install google-chrome
 cask install google-drive
 cask install iterm2
+cask install onepassword
 cask install sublime-text
 cask install skype
 cask install spotify
@@ -23,3 +25,5 @@ cask install transmission
 cask install virtualbox
 cask install vlc
 cask install vagrant
+
+cask alfred link
