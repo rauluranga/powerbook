@@ -4,6 +4,7 @@
 cask install adium
 cask install alfred
 cask install apptrap
+cask install caffeine
 cask install charles
 cask install codekit
 cask install dropbox
