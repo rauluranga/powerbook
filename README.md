@@ -66,6 +66,7 @@ $ bash -c "$(curl -fsSL raw.github.com/rauluranga/powerbook/master/bin/install)"
 - [caffeine](http://lightheadsw.com/caffeine/)
 - [charles](http://www.charlesproxy.com/)
 - [codekit](https://incident57.com/codekit/)
+- [dash](http://kapeli.com/Dash.zip)
 - [dropbox](https://www.dropbox.com/)
 - [evernote](https://evernote.com/)
 - [filezilla](https://filezilla-project.org/)
