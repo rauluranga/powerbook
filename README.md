@@ -59,6 +59,7 @@ $ bash -c "$(curl -fsSL raw.github.com/rauluranga/powerbook/master/bin/install)"
 ####OS X Applications
 
 - [adium](https://www.adium.im/)
+- [alfred](http://www.alfredapp.com/)
 - [apptrap](http://onnati.net/apptrap/)
 - [charles](http://www.charlesproxy.com/)
 - [codekit](https://incident57.com/codekit/)
@@ -71,6 +72,7 @@ $ bash -c "$(curl -fsSL raw.github.com/rauluranga/powerbook/master/bin/install)"
 - [google-chrome](https://www.google.com/intl/en/chrome/browser/)
 - [google-drive](https://drive.google.com/)
 - [iterm2](http://www.iterm2.com/)
+- [onepassword](https://agilebits.com/onepassword)
 - [sublime-text 2](http://www.sublimetext.com/2)
 - [skype](http://www.skype.com/en/)
 - [spotify](https://www.spotify.com/)
