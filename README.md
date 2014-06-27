@@ -41,6 +41,8 @@ $ bash -c "$(curl -fsSL raw.github.com/rauluranga/powerbook/master/bin/install)"
 - [powder](https://github.com/Rodreegez/powder)
 - [rake](https://github.com/jimweirich/rake)
 - [homesick](https://github.com/technicalpickles/homesick)
+- [librarian-chef](https://github.com/applicationsonline/librarian-chef)
+- [chef](https://github.com/opscode/chef/)
 
 ####OS X Applications
 
