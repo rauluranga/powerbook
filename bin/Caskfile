@@ -2,6 +2,7 @@
 # Usage: `brew bundle /path/to/Caskfile`
 
 cask install adium
+cask install apptrap
 cask install charles
 cask install codekit
 cask install dropbox

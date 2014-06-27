@@ -18,7 +18,7 @@ $ bash -c "$(curl -fsSL raw.github.com/rauluranga/powerbook/master/bin/install)"
 - [ruby 2.1.2](https://www.ruby-lang.org/en/)
 - [My dotfiles](https://github.com/rauluranga/dotfiles)
 
-####Homebrew formulae:   
+####Command-line tools using homebrew:   
 
 - [gitsh](https://github.com/thoughtbot/gitsh)
 - [cask](https://github.com/caskroom/homebrew-cask)
@@ -41,3 +41,71 @@ $ bash -c "$(curl -fsSL raw.github.com/rauluranga/powerbook/master/bin/install)"
 - [powder](https://github.com/Rodreegez/powder)
 - [rake](https://github.com/jimweirich/rake)
 - [homesick](https://github.com/technicalpickles/homesick)
+
+####OS X Applications
+
+- [adium](https://www.adium.im/)
+- [apptrap](http://onnati.net/apptrap/)
+- [charles](http://www.charlesproxy.com/)
+- [codekit](https://incident57.com/codekit/)
+- [dropbox](https://www.dropbox.com/)
+- [evernote](https://evernote.com/)
+- [filezilla](https://filezilla-project.org/)
+- [firefox](http://www.mozilla.org/en-US/firefox/new/)
+- [github](https://mac.github.com/)
+- [gitx-rowanj](http://rowanj.github.io/gitx/)
+- [google-chrome](https://www.google.com/intl/en/chrome/browser/)
+- [google-drive](https://drive.google.com/)
+- [iterm2](http://www.iterm2.com/)
+- [sublime-text 2](http://www.sublimetext.com/2)
+- [skype](http://www.skype.com/en/)
+- [spotify](https://www.spotify.com/)
+- [teamviewer](http://www.teamviewer.com/en/index.aspx)
+- [the-unarchiver](http://wakaba.c3.cx/s/apps/unarchiver)
+- [transmission](https://www.transmissionbt.com/)
+- [virtualbox](https://www.virtualbox.org/)
+- [vlc](http://www.videolan.org/vlc/index.html)
+- [vagrant](http://www.vagrantup.com/)
+
+#### Quick Look plugins
+
+- [qlcolorcode](https://code.google.com/p/qlcolorcode/)
+- [qlstephen](https://github.com/whomwah/qlstephen)
+- [qlmarkdown](https://github.com/toland/qlmarkdown)
+- [qlprettypatch](https://github.com/atnan/QLPrettyPatch)
+- [quicklook-csv](https://github.com/p2/quicklook-csv)
+- [quicklook-json](http://www.sagtau.com/quicklookjson.html) 
+- [provisionq](https://github.com/ealeksandrov/ProvisionQL)
+
+#### Fonts
+
+- [source-code-pro](http://blog.typekit.com/2012/09/24/source-code-pro/)
+
+#### Sublime Text 2 packages
+
+- [AdvancedNewFile](https://github.com/skuroda/Sublime-AdvancedNewFile)
+- [AngularJS](https://github.com/angular-ui/AngularJS-sublime-package)
+- [ASCII Decorator](https://github.com/viisual/ASCII-Decorator)
+- [BracketHighlighter](http://montesjmm.com/2012/09/19/sublime-text-2-bracket-highlighter/)
+- [CoffeeScript](https://github.com/Xavura/CoffeeScript-Sublime-Plugin)
+- [Corona Editor](https://github.com/coronalabs/CoronaSDK-SublimeText)
+- [Emmet](https://github.com/sergeche/emmet-sublime)
+- [Jade](https://github.com/davidrios/jade-tmbundle)
+- [JavaScript Snippets](https://github.com/jprichardson/sublime-js-snippets)
+- [JsFormat](https://github.com/jdc0589/JsFormat)
+- [JSHint](https://github.com/uipoet/sublime-jshint)
+- [SideBarEnhancements](https://github.com/titoBouzout/SideBarEnhancements)
+- [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter-for-ST2)
+- [SublimeLinter-jshint](https://github.com/SublimeLinter/SublimeLinter-jshint)
+- [SublimeLinter-ruby](https://github.com/SublimeLinter/SublimeLinter-ruby)
+- [Markdown Preview](https://github.com/revolunet/sublimetext-markdown-preview)
+- [Package Control](https://sublime.wbond.net/)
+- [Sass](https://github.com/nathos/sass-textmate-bundle)
+- [SFTP](http://wbond.net/sublime_packages/sftp)
+- [Theme - Soda](https://github.com/buymeasoda/soda-theme/)
+- [tern_for_sublime](https://github.com/marijnh/tern_for_sublime)
+- [Theme - Spacegray](https://github.com/kkga/spacegray)
+- [Trimmer](https://github.com/jonlabelle/Trimmer)
+
+
+

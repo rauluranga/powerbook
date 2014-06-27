@@ -1,7 +1,6 @@
 # Install Quick Look plugins
 # Usage: `brew bundle /path/to/QuickLookFile`
 
-cask install betterzipql
 cask install qlcolorcode
 cask install qlstephen
 cask install qlmarkdown

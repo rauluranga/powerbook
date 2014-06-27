@@ -70,7 +70,7 @@ fi
 
 # Check for Homebrew
 if ! type_exists 'brew'; then
-    e_header "Installing Homebrew..."
+    e_process "Installing Homebrew..."
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
     # Install Homebrew formulae via Brewfile
@@ -86,7 +86,7 @@ fi
 #                            /____/                        
 
 if [ ! -d "${HOME}/.oh-my-zsh" ]; then
-    e_header "Installing oh-my-zsh"
+    e_process "Installing oh-my-zsh"
 
     #Install oh-my-zsh
     curl -L http://install.ohmyz.sh | sh
@@ -96,7 +96,7 @@ if [ ! -d "${HOME}/.oh-my-zsh" ]; then
         printf 'export PATH="$HOME/.rbenv/bin:$PATH"\n' >> ~/.zshrc
         printf 'eval "$(rbenv init - --no-rehash)"\n' >> ~/.zshrc
 
-        e_header "Enable shims and autocompletion ..."
+        e_process "Enable shims and autocompletion ..."
         eval "$(rbenv init - --no-rehash)"
     fi
 
@@ -152,4 +152,32 @@ else
     e_error "This step is required.  When you're ready, run this script to start up again"
 fi
 
+#    ____  _____    _  __    ___                    
+#   / __ \/ ___/   | |/ /   /   |  ____  ____  _____
+#  / / / /\__ \    |   /   / /| | / __ \/ __ \/ ___/
+# / /_/ /___/ /   /   |   / ___ |/ /_/ / /_/ (__  ) 
+# \____//____/   /_/|_|  /_/  |_/ .___/ .___/____/  
+#                              /_/   /_/            
+
+# Ask installing OS X Applications?
+seek_confirmation "Do you want to install Mac OS X Applications?"
+
+if is_confirmed; then
+
+    e_process "Installing Mac OS X Applications"
+    brew bundle ./bin/Caskfile
+    
+    e_process "Installing Mac OS X fonts"
+    brew bundle ./bin/Fontfile
+
+    e_process "Installing Mac OS X Quick Look plugins for developers"
+    brew bundle ./bin/QuickLookfile
+
+    e_process "Installing ST2 plugins"
+    run_subl
+
+    e_success "All Mac OS X Applications have been installed"
+
+    e_warning "Please consider using cask commands for Updating/Upgrading or Uninstalling a Mac OS X Application"
+fi
 

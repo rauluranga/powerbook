@@ -4,18 +4,25 @@
 		"AdvancedNewFile",
 		"AngularJS",
 		"ASCII Decorator",
+		"BracketHighlighter",
 		"CoffeeScript",
 		"Corona Editor",
-		"FTPSync",
+		"Emmet",
 		"Jade",
 		"JavaScript Snippets",
 		"JsFormat",
+		"JSHint",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-jshint",
+		"SublimeLinter-ruby",
 		"Markdown Preview",
 		"Package Control",
 		"Sass",
 		"SFTP",
-		"SublimeBlockCursor",
+		"tern_for_sublime",
 		"Theme - Soda",
-		"Theme - Spacegray"
+		"Theme - Spacegray",
+		"Trimmer"
 	]
 }
