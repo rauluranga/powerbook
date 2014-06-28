@@ -20,7 +20,6 @@ install the_silver_searcher
 install tig
 install tmux
 install tree
-install xctool
 install cowsay
 install fortune
 install figlet
@@ -30,7 +29,7 @@ install toilet
 install rbenv
 install rbenv-gem-rehash
 install ruby-build
-install openssl
+
 link openssl --force
 
 # Remove outdated versions from the cellar
