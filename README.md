@@ -42,7 +42,6 @@ $ bash -c "$(curl -fsSL raw.github.com/rauluranga/powerbook/master/bin/install)"
 - [tig](https://github.com/jonas/tig)
 - [tmux](http://tmux.sourceforge.net/)
 - [tree](http://mama.indstate.edu/users/ice/tree/)
-- [xctool](https://github.com/facebook/xctool)
 - [rbenv](https://github.com/sstephenson/rbenv)
 - [rbenv-gem-rehash](https://github.com/sstephenson/rbenv-gem-rehash)
 - [ruby-build](https://github.com/sstephenson/ruby-build)
