@@ -1,13 +1,6 @@
 ##Powerbook
 Powerbook is a script to set up a Mac OS X laptop ready for development.
 
-
-###Known Issues
-- When you start ST2 for the firstime it will throw some errors, this because
-Package Control is just starting the download of all plugins listed in the ```Package Control.sublime-settings``` file and ST2 is looking for the ```Spacegray.sublime-theme``` that hasn't been downloaded yet. Just wait until all plugins have been installed and then restart ST2, everything should work fine.
-
-- In some cases fonts instalation may fail, this because the [Caskroom-fonts](https://github.com/caskroom/homebrew-fonts) is a pre-release software, if this happen to you, just run ```$ brew cask install font-name``` for every font listed in the FontFile, it should work as expected.
- 
 ###Manual setup
 
 When all is complete, you'll need to setup iTerm2 color scheme manually, download SpaceGray theme from [iterm2colorschemes](http://iterm2colorschemes.com/) and then load it from the color tab in iTerm2, finally set the font to Source Code Pro for Powerline need it by the [agnoster](https://gist.github.com/agnoster/3712874) theme for zsh.
@@ -136,6 +129,12 @@ $ bash -c "$(curl -fsSL raw.github.com/rauluranga/powerbook/master/bin/install)"
 - [tern_for_sublime](https://github.com/marijnh/tern_for_sublime)
 - [Theme - Spacegray](https://github.com/kkga/spacegray)
 - [Trimmer](https://github.com/jonlabelle/Trimmer)
+
+###Known Issues
+- When you start ST2 for the firstime it will throw some errors, this because
+Package Control is just starting the download of all plugins listed in the ```Package Control.sublime-settings``` file and ST2 is looking for the ```Spacegray.sublime-theme``` that hasn't been downloaded yet. Just wait until all plugins have been installed and then restart ST2, everything should work fine.
+
+- In some cases fonts instalation may fail, this because the [Caskroom-fonts](https://github.com/caskroom/homebrew-fonts) is a pre-release software, if this happen to you, just run ```$ brew cask install font-name``` for every font listed in the FontFile, it should work as expected.
 
 
 
