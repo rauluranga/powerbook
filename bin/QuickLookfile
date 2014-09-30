@@ -7,4 +7,4 @@ cask install qlmarkdown
 cask install qlprettypatch
 cask install quicklook-csv
 cask install quicklook-json 
-cask install provisionq
+cask install provisionql
