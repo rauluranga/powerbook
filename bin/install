@@ -71,7 +71,7 @@ fi
 # Check for Homebrew
 if ! type_exists 'brew'; then
     e_process "Installing Homebrew..."
-    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
     # Install Homebrew formulae via Brewfile
     e_process "Installing Homebrew packages"
