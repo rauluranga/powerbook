@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Install Quick Look plugins
+run_ql() {
+
+	brew cask install qlcolorcode
+	brew cask install qlstephen
+	brew cask install qlmarkdown
+	brew cask install qlprettypatch
+	brew cask install quicklook-csv
+	brew cask install quicklook-json 
+	brew cask install provisionql
+}

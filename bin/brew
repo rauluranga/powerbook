@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+# Install command-line tools using Homebrew
+run_brew() {
+	
+	# Make sure we’re using the latest Homebrew
+	brew update
+
+	# Upgrade any already-installed formulae
+	brew upgrade
+
+	brew tap thoughtbot/formulae
+	brew install gitsh	
+
+	brew tap caskroom/cask
+	brew install brew-cask
+
+	brew install git-flow
+	brew install hub
+	brew install pow
+	brew install the_silver_searcher
+	brew install tig
+	brew install tmux
+	brew install tree
+	brew install cowsay
+	brew install fortune
+	brew install figlet
+	brew install toilet
+
+	# rbenv 
+	brew install rbenv
+	brew install rbenv-gem-rehash
+	brew install ruby-build
+
+	brew link openssl --force
+
+	# Remove outdated versions from the cellar
+	brew cleanup
+}

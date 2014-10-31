@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# Install native apps
+run_apps() {
+	
+	brew cask install adium
+	brew cask install alfred
+	brew cask install appcode
+	brew cask install apptrap
+	brew cask install caffeine
+	brew cask install charles
+	brew cask install codekit
+	brew cask install dash
+	brew cask install dropbox
+	brew cask install evernote
+	brew cask install filezilla
+	brew cask install firefox
+	brew cask install github
+	brew cask install gitx-rowanj
+	brew cask install google-chrome
+	brew cask install google-drive
+	brew cask install iterm2
+	brew cask install onepassword
+	brew cask install sublime-text
+	brew cask install skype
+	brew cask install spotify
+	brew cask install teamviewer
+	brew cask install the-unarchiver
+	brew cask install transmission
+	brew cask install virtualbox
+	brew cask install vlc
+	brew cask install vagrant
+
+	brew cask alfred link
+}

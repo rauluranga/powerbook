@@ -48,6 +48,10 @@ if [[ "$1" == "-h" || "$1" == "--help" ]]; then
 fi
 
 # Source the necessary files and helper scripts
+source ./bin/brew
+source ./bin/cask
+source ./bin/font
+source ./bin/quicklook
 source ./lib/git
 source ./lib/ruby
 source ./lib/utils
@@ -75,7 +79,7 @@ if ! type_exists 'brew'; then
 
     # Install Homebrew formulae via Brewfile
     e_process "Installing Homebrew packages"
-    brew bundle ./bin/Brewfile
+    run_brew
 fi
 
 #          __                                          __  
@@ -165,13 +169,13 @@ seek_confirmation "Do you want to install Mac OS X Applications?"
 if is_confirmed; then
 
     e_process "Installing Mac OS X Applications"
-    brew bundle ./bin/Caskfile
+    run_apps
     
     e_process "Installing Mac OS X fonts"
-    brew bundle ./bin/Fontfile
+    run_fonts
 
     e_process "Installing Mac OS X Quick Look plugins for developers"
-    brew bundle ./bin/QuickLookfile
+    run_ql
 
     e_process "Installing ST2 plugins"
     run_subl
