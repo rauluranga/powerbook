@@ -16,6 +16,7 @@ run_brew() {
 	brew install brew-cask
 
 	brew install git-flow
+	brew install git-extras
 	brew install hub
 	brew install pow
 	brew install the_silver_searcher
