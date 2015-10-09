@@ -64,8 +64,6 @@ $ bash -c "$(curl -fsSL raw.github.com/rauluranga/powerbook/master/bin/install)"
 - [apptrap](http://onnati.net/apptrap/)
 - [caffeine](http://lightheadsw.com/caffeine/)
 - [charles](http://www.charlesproxy.com/)
-- [codekit](https://incident57.com/codekit/)
-- [dash](http://kapeli.com/Dash.zip)
 - [dropbox](https://www.dropbox.com/)
 - [evernote](https://evernote.com/)
 - [filezilla](https://filezilla-project.org/)
@@ -73,10 +71,12 @@ $ bash -c "$(curl -fsSL raw.github.com/rauluranga/powerbook/master/bin/install)"
 - [github](https://mac.github.com/)
 - [gitx-rowanj](http://rowanj.github.io/gitx/)
 - [google-chrome](https://www.google.com/intl/en/chrome/browser/)
+- [google-chrome-canary](https://www.google.com/chrome/browser/canary.html)
 - [google-drive](https://drive.google.com/)
-- [iterm2](http://www.iterm2.com/)
+- [iterm2-nightly](https://iterm2.com/downloads/nightly/#/section/home)
 - [onepassword](https://agilebits.com/onepassword)
 - [sublime-text 2](http://www.sublimetext.com/2)
+- [sublime-text 3](http://www.sublimetext.com/3)
 - [skype](http://www.skype.com/en/)
 - [spotify](https://www.spotify.com/)
 - [teamviewer](http://www.teamviewer.com/en/index.aspx)
@@ -85,6 +85,7 @@ $ bash -c "$(curl -fsSL raw.github.com/rauluranga/powerbook/master/bin/install)"
 - [virtualbox](https://www.virtualbox.org/)
 - [vlc](http://www.videolan.org/vlc/index.html)
 - [vagrant](http://www.vagrantup.com/)
+- [webstorm](https://www.jetbrains.com/webstorm/)
 
 #### Quick Look plugins
 
