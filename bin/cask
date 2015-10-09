@@ -9,8 +9,7 @@ run_apps() {
 	brew cask install apptrap
 	brew cask install caffeine
 	brew cask install charles
-	brew cask install codekit
-	brew cask install dash
+	
 	brew cask install dropbox
 	brew cask install evernote
 	brew cask install filezilla
@@ -20,7 +19,6 @@ run_apps() {
 	brew cask install google-chrome
 	brew cask install google-drive
 	
-	brew cask install onepassword
 	brew cask install sublime-text
 	brew cask install skype
 	brew cask install spotify
@@ -38,6 +36,5 @@ run_apps() {
 	brew cask install sublime-text3
 	brew cask install google-chrome-canary
 	
-
 	brew cask alfred link
 }
