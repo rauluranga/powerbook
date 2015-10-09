@@ -19,7 +19,7 @@ run_apps() {
 	brew cask install gitx-rowanj
 	brew cask install google-chrome
 	brew cask install google-drive
-	brew cask install iterm2
+	
 	brew cask install onepassword
 	brew cask install sublime-text
 	brew cask install skype
@@ -30,6 +30,14 @@ run_apps() {
 	brew cask install virtualbox
 	brew cask install vlc
 	brew cask install vagrant
+	brew cask install webstorm
+	
+	brew tap caskroom/versions
+	
+	brew cask install iterm2-nightly
+	brew cask install sublime-text3
+	brew cask install google-chrome-canary
+	
 
 	brew cask alfred link
 }
