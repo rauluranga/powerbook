@@ -14,7 +14,6 @@ run_apps() {
 	brew cask install evernote
 	brew cask install filezilla
 	brew cask install firefox
-	brew cask install github
 	brew cask install gitx-rowanj
 	brew cask install google-chrome
 	brew cask install google-drive
