@@ -15,6 +15,7 @@ run_brew() {
 	brew tap caskroom/cask
 	brew install brew-cask
 
+        brew install git
 	brew install git-flow
 	brew install git-extras
 	brew install hub
