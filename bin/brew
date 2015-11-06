@@ -28,6 +28,7 @@ run_brew() {
 	brew install fortune
 	brew install figlet
 	brew install toilet
+	brew install nvm
 
 	# rbenv 
 	brew install rbenv
