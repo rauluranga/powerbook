@@ -156,6 +156,34 @@ else
     e_error "This step is required.  When you're ready, run this script to start up again"
 fi
 
+
+#   _  ______  ___  ____     ______
+#  / |/ / __ \/ _ \/ __/ __ / / __/
+# /    / /_/ / // / _/  / // /\ \  
+#/_/|_/\____/____/___/  \___/___/  
+#
+
+if [ ! -d "${HOME}/.nvm}" ]; then
+    
+    mkdir -p "${HOME}/.nvm"
+
+    node_version="0.10.32"
+    
+    e_process "Installing Node v$node_version ..."
+      nvm install -s "v$node_version"
+    
+    e_process "Setting Node v$node_version as default  ..."
+       nvm alias default "$node_version"
+       
+    e_process "Updating NPM version ..."
+      sudo npm install -g npm
+      
+    e_process "Installing Gulp, Bower & BumpVersion"
+      npm install -g bower gulp bumpversion
+fi
+
+
+
 #    ____  _____    _  __    ___                    
 #   / __ \/ ___/   | |/ /   /   |  ____  ____  _____
 #  / / / /\__ \    |   /   / /| | / __ \/ __ \/ ___/
