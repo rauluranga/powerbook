@@ -3,6 +3,7 @@
 # Install native apps
 run_apps() {
 	
+	brew cask install mattr-slate
 	brew cask install adium
 	brew cask install alfred
 	brew cask install appcode
