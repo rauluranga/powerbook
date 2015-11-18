@@ -23,6 +23,7 @@ run_brew() {
 	brew install the_silver_searcher
 	brew install tig
 	brew install tmux
+	brew install reattach-to-user-namespace
 	brew install tree
 	brew install cowsay
 	brew install fortune
