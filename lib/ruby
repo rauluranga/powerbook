@@ -42,6 +42,9 @@ run_ruby() {
 
     e_process "librarian-chef"
       gem install librarian-chef --no-document
+    
+    e_process "tmuxinator"
+      gem install tmuxinator --no-document
 
     [[ $? ]] && e_success "Done"
 }
