@@ -166,6 +166,9 @@ fi
 if [ ! -d "${HOME}/.nvm}" ]; then
     
     mkdir -p "${HOME}/.nvm"
+    
+    export NVM_DIR=~/.nvm
+    source $(brew --prefix nvm)/nvm.sh
 
     node_version="0.10.32"
     
