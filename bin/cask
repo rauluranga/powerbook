@@ -3,7 +3,7 @@
 # Install native apps
 run_apps() {
 	
-	brew cask install mattr-slate
+	
 	brew cask install adium
 	brew cask install alfred
 	brew cask install appcode
@@ -18,6 +18,8 @@ run_apps() {
 	brew cask install rowanj-gitx
 	brew cask install google-chrome
 	brew cask install google-drive
+	brew cask install macdown
+	brew cask install mattr-slate
 	
 	brew cask install sublime-text
 	brew cask install skype
