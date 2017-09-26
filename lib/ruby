@@ -2,7 +2,6 @@
 
 run_ruby() {
 
-    #ruby_version="$(curl -sSL http://ruby.thoughtbot.com/latest)"
     ruby_version="2.4.2"
 
     if [ ! -d "${HOME}/rbenv/versions/${ruby_version}" ]; then
@@ -27,9 +26,6 @@ run_ruby() {
 
     e_process "Installing Cocoapods"
       gem install cocoapods --no-document
-
-    e_process "Installing Powder"
-      gem install powder --no-document
 
     e_process "Installing Rake"
       gem install rake --no-document
