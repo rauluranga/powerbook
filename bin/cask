@@ -4,9 +4,7 @@
 run_apps() {
 	
 	
-	brew cask install adium
 	brew cask install alfred
-	brew cask install appcode
 	brew cask install apptrap
 	brew cask install caffeine
 	brew cask install charles
@@ -21,7 +19,6 @@ run_apps() {
 	brew cask install macdown
 	brew cask install mattr-slate
 	
-	brew cask install sublime-text
 	brew cask install skype
 	brew cask install spotify
 	brew cask install teamviewer
@@ -30,13 +27,10 @@ run_apps() {
 	brew cask install virtualbox
 	brew cask install vlc
 	brew cask install vagrant
-	brew cask install webstorm
 	
 	brew tap caskroom/versions
 	
 	brew cask install iterm2-nightly
 	brew cask install sublime-text3
 	brew cask install google-chrome-canary
-	
-	brew cask alfred link
 }
