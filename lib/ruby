@@ -3,7 +3,7 @@
 run_ruby() {
 
     #ruby_version="$(curl -sSL http://ruby.thoughtbot.com/latest)"
-    ruby_version="2.3.0"
+    ruby_version="2.4.2"
 
     if [ ! -d "${HOME}/rbenv/versions/${ruby_version}" ]; then
 
