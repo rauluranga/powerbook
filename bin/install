@@ -55,7 +55,6 @@ source ./bin/quicklook
 source ./lib/git
 source ./lib/ruby
 source ./lib/utils
-source ./lib/sublime
 
 # Before relying on Homebrew, check that packages can be compiled
 if ! type_exists 'gcc'; then
@@ -207,9 +206,6 @@ if is_confirmed; then
 
     e_process "Installing Mac OS X Quick Look plugins for developers"
     run_ql
-
-    e_process "Installing ST2 plugins"
-    run_subl
 
     e_success "All Mac OS X Applications have been installed"
 
