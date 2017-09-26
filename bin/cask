@@ -4,7 +4,7 @@
 run_apps() {
 	
 	# java
-	brew install java
+	brew cask install java
 	
 	brew cask install alfred
 	brew cask install apptrap
