@@ -34,9 +34,6 @@ run_brew() {
 
 	# rbenv 
 	brew install rbenv
-	brew install ruby-build
-
-	brew link openssl --force
 
 	# Remove outdated versions from the cellar
 	brew cleanup
