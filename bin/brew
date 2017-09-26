@@ -31,9 +31,6 @@ run_brew() {
 	
 	# vim
 	brew install vim --with-python --with-ruby --with-perl --with-lua --override-system-vi
-	
-	# java
-	brew install java
 
 	# rbenv 
 	brew install rbenv
