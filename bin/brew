@@ -19,7 +19,6 @@ run_brew() {
 	brew install git-flow
 	brew install git-extras
 	brew install hub
-	brew install pow
 	brew install the_silver_searcher
 	brew install tig
 	brew install tmux
