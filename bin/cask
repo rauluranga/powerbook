@@ -27,7 +27,7 @@ run_apps() {
 	brew cask install teamviewer
 	brew cask install the-unarchiver
 	brew cask install transmission
-	brew cask install virtualbox
+	# brew cask install virtualbox
 	brew cask install vlc
 	brew cask install vagrant
 	
