@@ -1,7 +1,7 @@
-##Powerbook
+## Powerbook
 Powerbook is a script to set up a Mac OS X laptop ready for development.
 
-###Manual setup
+### Manual setup
 
 When all is complete, you'll need to setup iTerm2 color scheme manually, download SpaceGray theme from [iterm2colorschemes](http://iterm2colorschemes.com/) and then load it from the color tab in iTerm2, finally set the font to Source Code Pro for Powerline need it by the [agnoster](https://gist.github.com/agnoster/3712874) theme for zsh.
 
@@ -9,7 +9,7 @@ You'll get something like this:
 
 ![image](http://f.cl.ly/items/160A0W1u2D0K1A3E3y0G/iTerm2.png)
 
-###Install
+### Install
 
 run the script:
 
@@ -17,16 +17,16 @@ run the script:
 $ bash -c "$(curl -fsSL raw.github.com/rauluranga/powerbook/master/bin/install)"
 ```
 
-###Features
+### Features
 
-####Automatic software installation:   
+#### Automatic software installation:   
 
 - [homebrew](http://brew.sh/)
 - [oh my zsh](https://github.com/robbyrussell/oh-my-zsh)
 - [ruby 2.4.4](https://www.ruby-lang.org/en/)
 - [My dotfiles](https://github.com/rauluranga/dotfiles)
 
-####Command-line tools using homebrew:   
+#### Command-line tools using homebrew:   
 
 - [gitsh](https://github.com/thoughtbot/gitsh)
 - [git-flow](https://github.com/nvie/gitflow)
@@ -39,7 +39,7 @@ $ bash -c "$(curl -fsSL raw.github.com/rauluranga/powerbook/master/bin/install)"
 - [rbenv-gem-rehash](https://github.com/sstephenson/rbenv-gem-rehash)
 - [ruby-build](https://github.com/sstephenson/ruby-build)
 
-####Ruby gems:   
+#### Ruby gems:   
 
 - [bundler](http://bundler.io/)
 - [cocoapods](http://cocoapods.org/)
@@ -48,7 +48,7 @@ $ bash -c "$(curl -fsSL raw.github.com/rauluranga/powerbook/master/bin/install)"
 - [librarian-chef](https://github.com/applicationsonline/librarian-chef)
 - [chef](https://github.com/opscode/chef/)
 
-####OS X Applications
+#### OS X Applications
 
 - [alfred](http://www.alfredapp.com/)
 - [apptrap](http://onnati.net/apptrap/)
