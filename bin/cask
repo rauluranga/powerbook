@@ -10,6 +10,7 @@ run_apps() {
 	brew cask install apptrap
 	brew cask install caffeine
 	brew cask install charles
+	brew cask install rocket-chat
 	
 	brew cask install dropbox
 	brew cask install evernote
@@ -33,6 +34,6 @@ run_apps() {
 	brew tap caskroom/versions
 	
 	brew cask install iterm2-nightly
-	brew cask install sublime-text3
+	brew cask install visual-studio-code
 	brew cask install google-chrome-canary
 }
