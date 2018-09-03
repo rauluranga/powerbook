@@ -12,9 +12,6 @@ run_brew() {
 	brew tap thoughtbot/formulae
 	brew install gitsh	
 
-	brew tap caskroom/cask
-	brew install brew-cask
-
         brew install git
 	brew install git-flow
 	brew install git-extras
