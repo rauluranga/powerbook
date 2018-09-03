@@ -9,11 +9,6 @@ You'll get something like this:
 
 ![image](http://f.cl.ly/items/160A0W1u2D0K1A3E3y0G/iTerm2.png)
 
-
-it will match The Space Gray theme for ST2 (pre-isntalled for you)
-
-![image](http://f.cl.ly/items/2D2Q1Q0A3l2G0M3R0M0g/spacegray.png)
-
 ###Install
 
 run the script:
