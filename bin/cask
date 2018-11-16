@@ -27,7 +27,6 @@ run_apps() {
 	brew cask install teamviewer
 	brew cask install the-unarchiver
 	brew cask install transmission
-	# brew cask install virtualbox
 	brew cask install vlc
 	brew cask install vagrant
 	
@@ -36,4 +35,5 @@ run_apps() {
 	brew cask install iterm2-nightly
 	brew cask install visual-studio-code
 	brew cask install google-chrome-canary
+	brew cask install virtualbox
 }
