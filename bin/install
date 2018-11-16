@@ -56,13 +56,57 @@ source ./lib/git
 source ./lib/ruby
 source ./lib/utils
 
-# Before relying on Homebrew, check that packages can be compiled
-if ! type_exists 'gcc'; then
-    e_error "The XCode Command Line Tools must be installed first."
-    printf "  run 'xcode-select --install' and follow the instrucctions\n"
-    printf "  Then run this setup script again.\n"
+main() {
+    e_header "Welcome to Raul´s Powerbook setup."
+
+    title="script options: "
+    prompt="what would you like to do?:"
+    options=("full setup" "homebrew setup" "oh-my-zsh setup" "ruby setup" "dot files setup" "nodejs setup" "osx apps setup")
+
+    echo "$title"
+    PS3="$prompt "
+    select opt in "${options[@]}" "quit"; do 
+
+        case "$REPLY" in
+
+        1 ) 
+            brew_setup;
+            zsh_setup;
+            ruby_setup;
+            dotfiles_setup;
+            nodejs_setup;
+            osx_setup;
+            break;;
+        2 ) 
+            brew_setup;
+            break;;
+        3 ) 
+            zsh_setup;
+            break;;
+        4 ) 
+            ruby_setup;
+            break;;
+        5 ) 
+            dotfiles_setup;
+            break;;
+        6 ) 
+            nodejs_setup;
+            break;;
+        7 ) 
+            osx_setup;
+            break;;
+
+        $(( ${#options[@]}+1 )) ) echo "Goodbye!"; break;;
+        *) echo "Ooopps! Try another one.";continue;;
+
+        esac
+
+    done
+
+    figlet -k 'Thanks!' | cowsay -f moose -n | toilet --gay -f term   
+
     exit 1
-fi
+}
 
 #     __  __                     __                     
 #    / / / /___  ____ ___  ___  / /_  ________ _      __
@@ -70,16 +114,25 @@ fi
 #  / __  / /_/ / / / / / /  __/ /_/ / /  /  __/ |/ |/ / 
 # /_/ /_/\____/_/ /_/ /_/\___/_.___/_/   \___/|__/|__/  
                                                       
+brew_setup() {
+    # Before relying on Homebrew, check that packages can be compiled
+    if ! type_exists 'gcc'; then
+        e_error "The XCode Command Line Tools must be installed first."
+        printf "  run 'xcode-select --install' and follow the instrucctions\n"
+        printf "  Then run this setup script again.\n"
+        exit 1
+    fi
 
-# Check for Homebrew
-if ! type_exists 'brew'; then
-    e_process "Installing Homebrew..."
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    # Check for Homebrew
+    if ! type_exists 'brew'; then
+        e_process "Installing Homebrew..."
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-    # Install Homebrew formulae via Brewfile
-    e_process "Installing Homebrew packages"
-    run_brew
-fi
+        # Install Homebrew formulae via Brewfile
+        e_process "Installing Homebrew packages"
+        run_brew
+    fi
+}
 
 #          __                                          __  
 #   ____  / /_        ____ ___  __  __     ____  _____/ /_ 
@@ -87,24 +140,25 @@ fi
 # / /_/ / / / /_____/ / / / / / /_/ /_____// /_(__  ) / / /
 # \____/_/ /_/     /_/ /_/ /_/\__, /      /___/____/_/ /_/ 
 #                            /____/                        
+zsh_setup() {
+    if [ ! -d "${HOME}/.oh-my-zsh" ]; then
+        e_process "Installing oh-my-zsh"
 
-if [ ! -d "${HOME}/.oh-my-zsh" ]; then
-    e_process "Installing oh-my-zsh"
+        #Install oh-my-zsh
+        curl -L http://install.ohmyz.sh | sh
 
-    #Install oh-my-zsh
-    curl -L http://install.ohmyz.sh | sh
+        #setup rbenv
+        if ! grep -qs "rbenv init" ~/.zshrc; then
+            printf 'export PATH="$HOME/.rbenv/bin:$PATH"\n' >> ~/.zshrc
+            printf 'eval "$(rbenv init - --no-rehash)"\n' >> ~/.zshrc
 
-    #setup rbenv
-    if ! grep -qs "rbenv init" ~/.zshrc; then
-        printf 'export PATH="$HOME/.rbenv/bin:$PATH"\n' >> ~/.zshrc
-        printf 'eval "$(rbenv init - --no-rehash)"\n' >> ~/.zshrc
+            e_process "Enable shims and autocompletion ..."
+            eval "$(rbenv init - --no-rehash)"
+        fi
 
-        e_process "Enable shims and autocompletion ..."
-        eval "$(rbenv init - --no-rehash)"
+        export PATH="$HOME/.rbenv/bin:$PATH"
     fi
-
-    export PATH="$HOME/.rbenv/bin:$PATH"
-fi
+}
 
 #     ____        __         
 #    / __ \__  __/ /_  __  __
@@ -113,23 +167,24 @@ fi
 # /_/ |_|\__,_/_.___/\__, /  
 #                   /____/   
 
+ruby_setup() {
+    e_process "Installing ruby & gem files"
 
-e_process "Installing ruby & gem files"
+    # Check for rbenv
+    if type_exists 'rbenv'; then
 
-# Check for rbenv
-if type_exists 'rbenv'; then
+        # Install Ruby
+        run_ruby
 
-    # Install Ruby
-    run_ruby
+    else
+        printf "\n"
+        e_error "Error: rbenv not found."
+        printf "Aborting...\n"
+        exit
+    fi
 
-else
-    printf "\n"
-    e_error "Error: rbenv not found."
-    printf "Aborting...\n"
-    exit
-fi
-
-e_success "All packages have been installed"
+    e_success "All packages have been installed"
+}
 
 #        __      __  _____ __         
 #   ____/ /___  / /_/ __(_) /__  _____
@@ -137,23 +192,24 @@ e_success "All packages have been installed"
 # / /_/ / /_/ / /_/ __/ / /  __(__  ) 
 # \__,_/\____/\__/_/ /_/_/\___/____/  
                                     
+dotfiles_setup() {
+    # Ask before potentially overwriting files
+    seek_confirmation "This step may overwrite your existing dotfiles"
 
-# Ask before potentially overwriting files
-seek_confirmation "This step may overwrite your existing dotfiles"
+    if is_confirmed; then
+        # Symlink all necessary files
+        homesick clone ${GITHUB_USER}/dotfiles
+        homesick symlink dotfiles
 
-if is_confirmed; then
-    # Symlink all necessary files
-    homesick clone ${GITHUB_USER}/dotfiles
-    homesick symlink dotfiles
+        e_success "All files have been symlinked"
 
-    e_success "All files have been symlinked"
+        # Setup git authorship
+        setup_git_author
 
-    # Setup git authorship
-    setup_git_author
-
-else
-    e_error "This step is required.  When you're ready, run this script to start up again"
-fi
+    else
+        e_error "This step is required.  When you're ready, run this script to start up again"
+    fi
+}
 
 
 #   _  ______  ___  ____     ______
@@ -162,23 +218,29 @@ fi
 #/_/|_/\____/____/___/  \___/___/  
 #
 
-if [ ! -d "${HOME}/.nvm}" ]; then
-    
-    # Install nvm
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+nodejs_setup() {
+    if [ ! -d "${HOME}/.nvm}" ]; then
+        
+        # Install nvm
+        curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
-    node_version="8.11.4"
-    
-    e_process "Installing Node v$node_version ..."
-      nvm install -s "v$node_version"
-    
-    e_process "Setting Node v$node_version as default  ..."
-       nvm alias default "$node_version"
-       
-    e_process "Updating NPM version ..."
-      sudo npm install -g npm
+        node_version="8.11.4"
 
-fi
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+        
+        e_process "Installing Node v$node_version ..."
+        nvm install "v$node_version"
+        
+        e_process "Setting Node v$node_version as default  ..."
+        nvm alias default "$node_version"
+        
+        e_process "Updating NPM version ..."
+        sudo npm install -g npm
+
+    fi
+}
 
 
 
@@ -189,11 +251,7 @@ fi
 # \____//____/   /_/|_|  /_/  |_/ .___/ .___/____/  
 #                              /_/   /_/            
 
-# Ask installing OS X Applications?
-seek_confirmation "Do you want to install Mac OS X Applications?"
-
-if is_confirmed; then
-
+osx_setup() {
     e_process "Installing Mac OS X Applications"
     run_apps
     
@@ -206,11 +264,7 @@ if is_confirmed; then
     e_success "All Mac OS X Applications have been installed"
 
     e_warning "Please consider using cask commands for Updating/Upgrading or Uninstalling a Mac OS X Application"
-fi
-
-figlet -k 'Enjoy!' | cowsay -f moose -n | toilet --gay -f term   
-
-e_success "Your MAC is ready to rock!"
+}
 
 
-
+main
