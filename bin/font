@@ -9,6 +9,6 @@ run_fonts() {
 	brew cask install font-dejavu-sans-mono-for-powerline
 	brew cask install font-inconsolata-for-powerline
 	brew cask install font-inconsolata-dz-for-powerline
-	brew cask install font-sauce-code-powerline
+	brew cask install font-source-code-pro-for-powerline
 }
 
