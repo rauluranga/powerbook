@@ -21,6 +21,7 @@ run_apps() {
 	brew cask install google-drive
 	brew cask install macdown
 	brew cask install mattr-slate
+	brew cask install whatsapp
 	
 	brew cask install skype
 	brew cask install spotify
