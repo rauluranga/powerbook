@@ -16,6 +16,7 @@ run_apps() {
 	brew cask install evernote
 	brew cask install filezilla
 	brew cask install firefox
+	brew cask install flux
 	brew cask install rowanj-gitx
 	brew cask install google-chrome
 	brew cask install google-drive
@@ -36,5 +37,6 @@ run_apps() {
 	brew cask install iterm2-nightly
 	brew cask install visual-studio-code
 	brew cask install google-chrome-canary
+	brew cask install microsoft-remote-desktop-beta
 	brew cask install virtualbox
 }
