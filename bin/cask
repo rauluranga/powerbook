@@ -3,8 +3,7 @@
 # Install native apps
 run_apps() {
 	
-	# java
-	brew cask install java
+	brew cask install java8
 	
 	brew cask install alfred
 	brew cask install apptrap
