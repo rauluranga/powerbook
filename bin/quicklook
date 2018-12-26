@@ -10,4 +10,5 @@ run_ql() {
 	brew cask install quicklook-csv
 	brew cask install quicklook-json 
 	brew cask install provisionql
+	brew cask install quicklookapk
 }
