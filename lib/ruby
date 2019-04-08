@@ -2,7 +2,7 @@
 
 run_ruby() {
 
-    ruby_version="2.5.1"
+    ruby_version="2.6.2"
 
     if [ ! -d "${HOME}/rbenv/versions/${ruby_version}" ]; then
 
