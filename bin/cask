@@ -30,7 +30,7 @@ run_apps() {
 	brew cask install vlc
 	brew cask install vagrant
 	
-	brew tap caskroom/versions
+	brew tap homebrew/cask-versions
 	
 	brew cask install iterm2-nightly
 	brew cask install visual-studio-code
