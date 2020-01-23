@@ -3,7 +3,7 @@
 # Install native fonts
 run_fonts() {
 	
-	brew tap caskroom/fonts          
+	brew tap homebrew/cask-fonts          
 
 	brew cask install font-source-code-pro
 	brew cask install font-dejavu-sans-mono-for-powerline
