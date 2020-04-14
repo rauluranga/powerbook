@@ -11,7 +11,8 @@ run_brew() {
 
 	brew tap thoughtbot/formulae
 	brew install gitsh
-
+	
+	brew install curl-openssl
         brew install git
 	brew install git-flow
 	brew install git-extras
