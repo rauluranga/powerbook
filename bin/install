@@ -126,7 +126,7 @@ brew_setup() {
     # Check for Homebrew
     if ! type_exists 'brew'; then
         e_process "Installing Homebrew..."
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
         # Install Homebrew formulae via Brewfile
         e_process "Installing Homebrew packages"
