@@ -2,7 +2,7 @@
 
 run_ruby() {
 
-    ruby_version="2.6.2"
+    ruby_version="2.7.5"
 
     if [ ! -d "${HOME}/rbenv/versions/${ruby_version}" ]; then
 
@@ -33,11 +33,11 @@ run_ruby() {
     e_process "Installing Homesick"
       gem install homesick --no-document
 
-    e_process "Installing chef"
-      gem install chef --no-document
+    # e_process "Installing chef"
+    #   gem install chef --no-document
 
-    e_process "librarian-chef"
-      gem install librarian-chef --no-document
+    # e_process "librarian-chef"
+    #   gem install librarian-chef --no-document
     
     e_process "tmuxinator"
       gem install tmuxinator --no-document
