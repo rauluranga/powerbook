@@ -4,11 +4,11 @@
 run_fonts() {
 	
 	brew tap homebrew/cask-fonts          
-
-	brew cask install font-source-code-pro
-	brew cask install font-dejavu-sans-mono-for-powerline
-	brew cask install font-inconsolata-for-powerline
-	brew cask install font-inconsolata-dz-for-powerline
-	brew cask install font-source-code-pro-for-powerline
+	brew install svn
+	brew install font-source-code-pro
+	brew install font-dejavu-sans-mono-for-powerline
+	brew install font-inconsolata-for-powerline
+	brew install font-inconsolata-dz-for-powerline
+	brew install font-source-code-pro-for-powerline
 }
 
