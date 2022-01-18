@@ -28,7 +28,7 @@ run_brew() {
 	brew install toilet
 	
 	# vim
-	brew install vim --with-python --with-ruby --with-perl --with-lua --override-system-vi
+	# brew install vim --with-python --with-ruby --with-perl --with-lua --override-system-vi
 
 	# rbenv 
 	brew install rbenv
