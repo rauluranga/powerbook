@@ -2,13 +2,13 @@
 
 # Install Quick Look plugins
 run_ql() {
-
-	brew cask install qlcolorcode
-	brew cask install qlstephen
-	brew cask install qlmarkdown
-	brew cask install qlprettypatch
-	brew cask install quicklook-csv
-	brew cask install quicklook-json 
-	brew cask install provisionql
-	brew cask install quicklookapk
+	# QL plugins still needs some work por Apple M1
+	# brew cask install qlcolorcode
+	# brew cask install qlstephen
+	# brew cask install qlmarkdown
+	# brew cask install qlprettypatch
+	# brew cask install quicklook-csv
+	# brew cask install quicklook-json 
+	# brew cask install provisionql
+	# brew cask install quicklookapk
 }
