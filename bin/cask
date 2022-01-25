@@ -2,39 +2,47 @@
 
 # Install native apps
 run_apps() {
+
+	brew install --cask alfred
+	brew install --cask brave-browser
+	brew install --cask cyberduck
+	brew install --cask dash
+	brew install --cask docker
+	brew install --cask firefox
+	brew install --cask flux
+	brew install --cask github
+	brew install --cask google-chrome
+	brew install --cask imageoptim
+	brew install --cask insomnia
+	brew install --cask iterm2
+	brew install --cask microsoft-remote-desktop
+	brew install --cask proxyman
+	brew install --cask rocket-chat
+	brew install --cask sequel-ace
+	brew install --cask spotify
+	brew install --cask teamviewer
+	brew install --cask the-unarchiver
+	brew install --cask vlc
+	brew install --cask zoom
 	
-	brew cask install java8
-	
-	brew cask install alfred
-	brew cask install apptrap
-	brew cask install caffeine
-	brew cask install charles
-	brew cask install cyberduck
-	brew cask install rocket-chat
-	
-	brew cask install dropbox
-	brew cask install evernote
-	brew cask install firefox
-	brew cask install flux
-	brew cask install rowanj-gitx
-	brew cask install google-chrome
-	brew cask install macdown
-	brew cask install mattr-slate
-	brew cask install whatsapp
-	
-	brew cask install skype
-	brew cask install spotify
-	brew cask install teamviewer
-	brew cask install the-unarchiver
-	brew cask install transmission
-	brew cask install vlc
-	brew cask install vagrant
-	
-	brew tap homebrew/cask-versions
-	
-	brew cask install iterm2-nightly
-	brew cask install visual-studio-code
-	brew cask install google-chrome-canary
-	brew cask install microsoft-remote-desktop-beta
-	brew cask install virtualbox
+	#
+	#
+	#
+	#  brew --cask install java8		# Use Open JDK 17 from: https://adoptium.net/releases.html ???
+	#  brew --cask install apptrap
+	#  brew --cask install caffeine 	# Use Coca app from the App Store
+	#  brew --cask install charles  	# Use Proxyman 
+	#  brew --cask install dropbox
+	#  brew --cask install evernote
+	#  brew --cask install rowanj-gitx 	# Use Github app
+	#  brew --cask install macdown 		# Use VS Code
+	#  brew --cask install mattr-slate
+	#  brew --cask install whatsapp
+	#  brew --cask install skype
+	#  brew --cask install transmission
+	#  brew --cask install vagrant 		# Use Docker
+	#  brew --cask install virtualbox  	# Use Docker
+	#
+	#
+	#
 }
