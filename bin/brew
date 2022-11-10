@@ -27,6 +27,9 @@ run_brew() {
 	brew install figlet
 	brew install toilet
 	
+	# pyenv 
+	brew install pyenv
+	
 	# vim
 	# brew install vim --with-python --with-ruby --with-perl --with-lua --override-system-vi
 
