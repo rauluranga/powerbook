@@ -2,7 +2,9 @@
 
 # Install Quick Look plugins
 run_ql() {
-	# QL plugins still needs some work por Apple M1
+	
+	# QL plugins still needs some work por Apple M1 use https://www.ipreview.app/
+	
 	# brew cask install qlcolorcode
 	# brew cask install qlstephen
 	# brew cask install qlmarkdown
