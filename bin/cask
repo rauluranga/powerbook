@@ -4,6 +4,7 @@
 run_apps() {
 
 	brew install --cask alfred
+	brew install --cask appcleaner
 	brew install --cask brave-browser
 	brew install --cask cyberduck
 	brew install --cask dash
@@ -29,7 +30,7 @@ run_apps() {
 	#
 	#
 	#  brew --cask install java8		# Use Open JDK 17 from: https://adoptium.net/releases.html ???
-	#  brew --cask install apptrap
+	#  brew --cask install apptrap		# Use appcleaner
 	#  brew --cask install caffeine 	# Use Coca app from the App Store
 	#  brew --cask install charles  	# Use Proxyman 
 	#  brew --cask install dropbox
