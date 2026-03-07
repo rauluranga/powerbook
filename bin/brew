@@ -11,10 +11,12 @@ run_brew() {
 
 	brew tap thoughtbot/formulae
 	brew install gitsh
-	
+
+    brew install bat
     brew install git
 	brew install git-flow
 	brew install git-extras
+    brew install git-delta
 	brew install hub
 	brew install the_silver_searcher
 	brew install tig
