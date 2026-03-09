@@ -30,6 +30,8 @@ run_brew() {
 	brew install toilet
     brew install starship
     brew install nvim
+    brew install zoxide
+    brew install fzf
 	
 	# pyenv 
 	brew install pyenv
